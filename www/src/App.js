@@ -1,3 +1,4 @@
+import { Outlet, Link } from "react-router-dom";
 import './App.css';
 
 function App() {
@@ -9,19 +10,19 @@ function App() {
           
           <ul className="navbar-nav">
             <li className="nav-item me-2">
-              <a href="#">Home</a>
+              <Link to="/main">Home</Link>
             </li>
 
             <li className="nav-item me-2">
-              <a href="#">Profile</a>
+              <Link to="/profile">Profile</Link>
             </li>
 
             <li className="nav-item me-2">
-              <a href="#">Notifications</a>
+              <Link to="/notifications">Notifications</Link>
             </li>
 
             <li className="nav-item me-2">
-              <a href="#">Messages</a>
+              <Link to="/messages">Messages</Link>
             </li>
 
             <li className="nav-item me-2">
@@ -34,9 +35,7 @@ function App() {
       </header>
 
       <main>
-        
-        <h1> Main Content</h1>
-
+        <Outlet />
       </main>
 
     </div>
