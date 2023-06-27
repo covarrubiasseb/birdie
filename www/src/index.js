@@ -15,6 +15,17 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    loader: ({ request }) => 
+      fetch("/api/login", {
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST",
+        body: JSON.stringify({
+          token: "SampleToken"
+        })
+      })
+    ,
     children: [
       {
         path: "/main",

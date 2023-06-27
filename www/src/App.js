@@ -1,45 +1,54 @@
+import React from 'React';
 import { Outlet, Link } from "react-router-dom";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <nav className="navbar navbar-expand">
-          <div className="container-fluid">
-          
-          <ul className="navbar-nav">
-            <li className="nav-item me-2">
-              <Link to="/main">Home</Link>
-            </li>
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-            <li className="nav-item me-2">
-              <Link to="/profile">Profile</Link>
-            </li>
+  render() {
 
-            <li className="nav-item me-2">
-              <Link to="/notifications">Notifications</Link>
-            </li>
+    return (
+      <div className="App">
+        <header className="App-header">
+          <nav className="navbar navbar-expand">
+            <div className="container-fluid">
+            
+            <ul className="navbar-nav">
+              <li className="nav-item me-2">
+                <Link to="/main">Home</Link>
+              </li>
 
-            <li className="nav-item me-2">
-              <Link to="/messages">Messages</Link>
-            </li>
+              <li className="nav-item me-2">
+                <Link to="/profile">Profile</Link>
+              </li>
 
-            <li className="nav-item me-2">
-              <input type="text" placeholder="Search Birdie" />
-            </li>
-          </ul>
+              <li className="nav-item me-2">
+                <Link to="/notifications">Notifications</Link>
+              </li>
 
-          </div>
-        </nav>
-      </header>
+              <li className="nav-item me-2">
+                <Link to="/messages">Messages</Link>
+              </li>
 
-      <main>
-        <Outlet />
-      </main>
+              <li className="nav-item me-2">
+                <input type="text" placeholder="Search Birdie" />
+              </li>
+            </ul>
 
-    </div>
-  );
+            </div>
+          </nav>
+        </header>
+
+        <main>
+          <Outlet />
+        </main>
+
+      </div>
+    );
+  }
+
 }
 
 export default App;
