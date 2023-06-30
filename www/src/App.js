@@ -1,10 +1,18 @@
 import React from 'React';
+import axios from 'axios';
 import { Outlet, Link } from "react-router-dom";
 import './App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    axios.get("/api/auth/login")
+    .then( (response) => {
+      console.log(response);
+    });
   }
 
   render() {
