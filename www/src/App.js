@@ -3,6 +3,11 @@ import axios from 'axios';
 import { Outlet, Link } from "react-router-dom";
 import './App.css';
 
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import LoginRegister from './Components/LoginRegister';
 
 class App extends React.Component {
@@ -48,33 +53,37 @@ class App extends React.Component {
         }
 
         <header className="App-header">
-          <nav className="navbar navbar-expand">
-            <div className="container-fluid">
-            
-            <ul className="navbar-nav">
-              <li className="nav-item me-2">
-                <Link to="/main">Home</Link>
-              </li>
 
-              <li className="nav-item me-2">
-                <Link to="/profile">Profile</Link>
-              </li>
+          <Navbar>
 
-              <li className="nav-item me-2">
-                <Link to="/notifications">Notifications</Link>
-              </li>
+            <Container fluid>
 
-              <li className="nav-item me-2">
-                <Link to="/messages">Messages</Link>
-              </li>
+              <Nav>
 
-              <li className="nav-item me-2">
+                <Nav.Link>
+                  <Link to="/main">Home</Link>
+                </Nav.Link>
+
+                <Nav.Link>
+                  <Link to="/profile">Profile</Link>
+                </Nav.Link>
+
+                <Nav.Link>
+                  <Link to="/notifications">Notifications</Link>
+                </Nav.Link>
+
+                <Nav.Link>
+                  <Link to="/messages">Messages</Link>
+                </Nav.Link>
+
                 <input type="text" placeholder="Search Birdie" />
-              </li>
-            </ul>
 
-            </div>
-          </nav>
+              </Nav>
+
+            </Container>
+
+          </Navbar>
+
         </header>
 
         <main>
