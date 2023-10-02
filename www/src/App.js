@@ -8,17 +8,31 @@ import LoginRegister from './Components/LoginRegister';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      isLoggedIn: false
+    }
   }
 
   componentDidMount() {
     axios.get("/api/auth/login")
     .then( (response) => {
       if (response.data) {
+
         console.log("Is Logged In.");
+
+        this.setState({
+          isLoggedin: true
+        });
+
       } else {
       // User is Not Logged In
         // Set Flag to Render Login Page
         console.log("Is Not Logged In.");
+
+        this.setState({
+          isLoggedIn: false
+        });
 
       }
     });
@@ -29,7 +43,9 @@ class App extends React.Component {
     return (
       <div className="App">
         
-        <LoginRegister />
+        {
+          !this.state.isLoggedin ? <LoginRegister /> : null
+        }
 
         <header className="App-header">
           <nav className="navbar navbar-expand">
