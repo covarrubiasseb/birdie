@@ -31,6 +31,10 @@ app.use(userAuthRouter);
 // serving public build
 app.use(express.static(`${__dirname}/../www/build`));
 
+app.get("/*", (req, res) => {
+  res.sendFile('index.html', { root: `${__dirname}/../www/build`});
+});
+
 // Choose the port and start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
