@@ -8,12 +8,11 @@ router.get('/api/auth/login', (req, res, next) => {
 
   if (session.validated) {
   // if logged in
-    res.send("Logged in.");
+    res.send(true);
   } else {
     // not logged in
       // return not logged in to client
-    session.validated = true;
-    res.send("Not Logged In.");
+    res.send(false);
   } 
 
   next();

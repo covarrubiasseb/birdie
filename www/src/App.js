@@ -11,7 +11,13 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("/api/auth/login")
     .then( (response) => {
-      console.log(response);
+      if (response.data) {
+        console.log("Is Logged In.");
+      } else {
+      // User is Not Logged In
+        // Set Flag to Render Login Page
+        console.log("Is Not Logged In.");
+      }
     });
   }
 
