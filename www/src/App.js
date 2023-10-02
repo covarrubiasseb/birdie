@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Outlet, Link } from "react-router-dom";
 import './App.css';
 
+import LoginRegister from './Components/LoginRegister';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,9 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        
+        <LoginRegister />
+
         <header className="App-header">
           <nav className="navbar navbar-expand">
             <div className="container-fluid">
