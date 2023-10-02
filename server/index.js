@@ -31,6 +31,7 @@ app.use(userAuthRouter);
 // serving public build
 app.use(express.static(`${__dirname}/../www/build`));
 
+// handle page refresh GET requests
 app.get("/*", (req, res) => {
   res.sendFile('index.html', { root: `${__dirname}/../www/build`});
 });
