@@ -6,8 +6,8 @@ import {
 } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import Login from './Login';
-import Register from './Register';
+import Login from './Routes/Login';
+import Register from './Routes/Register';
 import Main from './Routes/Main.js';
 import Profile from './Routes/UserProfile.js';
 import Notifications from './Routes/Notifications.js';
