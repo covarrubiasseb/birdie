@@ -1,6 +1,4 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
-const sessions = require('express-session');
 const { config } = require('dotenv').config();
 
 const userAuthRouter = require('./api/userAuth');
@@ -8,22 +6,11 @@ const userAuthRouter = require('./api/userAuth');
 const app = express();
 
 // creating 24 hours from milliseconds
-const oneDay = 1000 * 60 * 60 * 24;
-
-// //session middleware
-app.use(sessions({
-    secret: "test-string",
-    saveUninitialized:true,
-    cookie: { maxAge: oneDay },
-    resave: false
-}));
+// const oneDay = 1000 * 60 * 60 * 24;
 
 // parse request data
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}));
-
-// parse cookie data
-app.use(cookieParser());
+app.use(express.urlencoded({ extended: true }));
 
 // API Routes
 app.use(userAuthRouter);

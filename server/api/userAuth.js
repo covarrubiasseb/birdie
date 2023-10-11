@@ -3,10 +3,10 @@ const express = require('express');
 let router = express.Router();
 
 router.get('/api/auth/login', (req, res, next) => {
-  console.log(req.session);
-  const session = req.session;
+  console.log(req.body);
+  const session = req.body;
 
-  if (session.validated) {
+  if (req.body) {
   // if logged in
     res.send(true);
   } else {

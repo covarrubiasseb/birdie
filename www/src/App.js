@@ -15,7 +15,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isLoggedIn: false
+      isLoggedIn: false,
+      token: null
     }
   }
 
@@ -24,6 +25,7 @@ class App extends React.Component {
     .then( (response) => {
       if (response.data) {
 
+        console.log(response.data);
         console.log("Is Logged In.");
 
         this.setState({
