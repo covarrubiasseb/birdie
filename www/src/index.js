@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   createBrowserRouter,
-  RouterProvider
+  RouterProvider,
+  Navigate
 } from 'react-router-dom';
 import './index.css';
 import App from './App';
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/messages",
         element: <Messages />
+      },
+      {
+        path: "*",
+        element: <Navigate to="/main" />
       }
     ]
   }
