@@ -15,7 +15,7 @@ router.get('/api/auth/login', (req, res, next) => {
     res.send(false);
   } 
 
-  next();
+  return next();
 });
 
 module.exports = router;
