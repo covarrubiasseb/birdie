@@ -2,7 +2,7 @@ const express = require('express');
 
 let router = express.Router();
 
-router.post('/api/auth/login', (req, res, next) => {
+router.post("/api/auth/login", (req, res, next) => {
   console.log(req.body);
 
   // Todo: return valid token on successful token/login info
@@ -24,6 +24,17 @@ router.post('/api/auth/login', (req, res, next) => {
 
 
   return next();
+});
+
+
+// Todo: Handle new account creation
+router.post("/api/auth/register", (req, res, next) => {
+  console.log(req.body);
+
+  res.send(null);
+
+  return next();
+
 });
 
 module.exports = router;
