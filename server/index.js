@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors');
+const sessions = require('express-session');
 const { config } = require('dotenv').config();
 
 const userAuthRouter = require('./api/userAuth');
@@ -6,7 +8,16 @@ const userAuthRouter = require('./api/userAuth');
 const app = express();
 
 // creating 24 hours from milliseconds
-// const oneDay = 1000 * 60 * 60 * 24;
+const oneDay = 1000 * 60 * 60 * 24;
+
+app.use(sessions({
+  secret: "thisismysecrctekeyf435346",
+  saveUninitialized:true,
+  cookie: { maxAge: oneDay },
+  resave: false
+}));
+
+app.use(cors());
 
 // parse request data
 app.use(express.json());
