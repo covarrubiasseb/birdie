@@ -46,15 +46,15 @@ class Login extends React.Component {
     })
     .then(response => {
 
-      console.log(response.data);
+      if (response.data) {
+        this.props.setIsLoggedIn();
+      }
 
       // Clear forms on submission
       this.setState({
         username: "",
         password: ""
       });
-
-      // Todo: use this.props.setToken to set Token to newly retrieved token
 
       // Todo: show user invalid login on invalid response from server
 

@@ -34,8 +34,8 @@ class LoginRegister extends React.Component {
     return (
 
       this.state.isRegistered ? 
-        <Login setRegister={this.setRegister} setToken={this.props.setToken} /> : 
-        <Register setLogin={this.setLogin} setToken={this.props.setToken}/> 
+        <Login setRegister={this.setRegister} setIsLoggedIn={this.props.setIsLoggedIn} /> : 
+        <Register setLogin={this.setLogin} /> 
 
     );
 

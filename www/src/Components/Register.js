@@ -46,8 +46,6 @@ class Register extends React.Component {
     })
     .then(response => {
 
-      console.log(response.data);
-
       // Clear forms on submission
       this.setState({
         username: "",

@@ -15,57 +15,40 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      token: null
+      isLoggedIn: false
     }
 
-    this.setToken = this.setToken.bind(this);
+    this.setIsLoggedIn = this.setIsLoggedIn.bind(this);
   }
 
-  setToken(data) {
+  setIsLoggedIn() {
     this.setState({
-      token: data
+      isLoggedIn: true
     });
   }
 
   componentDidMount() {
 
-    // Todo: Retrieve token from localstorage first
-
-    // Todo: Check if login is in localstorage already
-    axios.post("/api/auth/login", {
-      data: {
-        token: this.state.token
-      }
-    })
+    axios.post("/api/auth/login")
     .then(response => {
-
-      console.log(response.data);
 
       if (response.data) {
 
-        console.log("Is Logged In.");
-
-        this.setState({
-          token: response.data
-        });
-
-      } else {
-      // User is Not Logged In
-        // Set Flag to Render Login Page
-        console.log("Is Not Logged In.");
-
-        this.setState({
-          token: null
-        });
+        this.setIsLoggedIn();
 
       }
+
     });
 
   }
 
   componentDidUpdate() {
 
-    // Todo: go to dashboard on validated token
+    if (this.state.isLoggedIn) {
+
+      // Todo: redirect to /main
+
+    }
 
   }
 
@@ -75,7 +58,7 @@ class App extends React.Component {
       <div className="App">
         
         {
-          !this.state.token ? <LoginRegister setToken={this.setToken}/> : null
+          !this.state.isLoggedIn ? <LoginRegister setIsLoggedIn={this.setIsLoggedIn}/> : null
         }
 
         <header className="App-header">
