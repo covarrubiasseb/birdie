@@ -1,0 +1,29 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form-row {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.login-form-submit {
+    margin-top: 5px;
+}
+
+.register-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-form-row {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.register-form-submit {
+    margin-top: 5px;
+}

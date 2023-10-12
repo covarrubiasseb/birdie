@@ -2,6 +2,8 @@ import React from 'React';
 import axios from 'axios';
 import Modal from 'react-bootstrap/Modal';
 
+import './LoginRegister.css';
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -68,22 +70,22 @@ class Login extends React.Component {
 
         <div className="login-wrapper">
           <h1>Please Log In</h1>
-          <form onSubmit={e => this.handleSubmit(e) }>
-            <label>
+          <form className="container" onSubmit={e => this.handleSubmit(e) }>
+            <label className="row login-form-row">
               <p>Username</p>
               <input type="text" onChange={e => this.setUsername(e)} value={this.state.username}/>
             </label>
-            <label>
+            <label className="row login-form-row">
               <p>Password</p>
               <input type="password" onChange={e => this.setPassword(e)} value={this.state.password}/>
             </label>
-            <div>
+            <div className="row login-form-row login-form-submit">
               <button type="submit">Submit</button>
             </div>
           </form>
-        </div>
 
-        <p>Not Registered? <a href="" onClick={this.props.setRegister}>Sign up!</a></p>
+          <p>Not Registered? <a href="" onClick={this.props.setRegister}>Sign up!</a></p>
+        </div>
 
       </Modal>
 
